@@ -1,10 +1,3 @@
-An `IndentationError` in Python means the spacing or tabs at the beginning of the line got mixed up when the code was copied and pasted. Since Python relies heavily on exact spacing, even one extra space can cause this error.
-
-To fix this completely, please **delete all the text** in your `hourlyReportV3.py` file, and copy-paste the entire block below using the "Copy" button at the top right of the code box. This ensures no hidden spaces or tabs are accidentally added.
-
-Here is the clean, correctly indented code:
-
-```python
 import streamlit as st
 import pandas as pd
 import io
