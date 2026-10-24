@@ -1,10 +1,3 @@
-The issue occurs because the attendance system records the *number of hours* a student attended. If it's a 2-hour class and 50 students attend both hours, each student gets a "2" in the attended column. Summing those values results in 100 instead of 50.
-
-To fix this, we need to count the **number of unique students who have an attendance greater than 0** for that subject, rather than summing the total hours they attended.
-
-You only need to change **one line** in your code. Find this section under `STEP 2`:
-
-```python
                     for i, col in subject_cols:
                         code = str(col).split(' - ')[0].strip()
                         attended_series = pd.to_numeric(df_att.iloc[1:, i+1], errors='coerce').fillna(0)
@@ -14,11 +7,6 @@ You only need to change **one line** in your code. Find this section under `STEP
                         # NEW LINE: Count how many students attended > 0 hours
                         att_counts[code] = int((attended_series > 0).sum())
 
-```
-
-### Here is the complete, updated code:
-
-```python
 import streamlit as st
 import pandas as pd
 import io
