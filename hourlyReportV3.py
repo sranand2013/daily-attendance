@@ -234,5 +234,3 @@ if process_btn:
                 st.error(f"❌ An error occurred during processing: {str(e)}")
                 with st.expander("Show Detailed Error"):
                     st.code(traceback.format_exc())
-
-```
