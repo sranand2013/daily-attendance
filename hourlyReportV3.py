@@ -1,12 +1,10 @@
-                    for i, col in subject_cols:
-                        code = str(col).split(' - ')[0].strip()
-                        attended_series = pd.to_numeric(df_att.iloc[1:, i+1], errors='coerce').fillna(0)
-                        
-                        # OLD LINE: att_counts[code] = int(attended_series.sum())
-                        
-                        # NEW LINE: Count how many students attended > 0 hours
-                        att_counts[code] = int((attended_series > 0).sum())
+An `IndentationError` in Python means the spacing or tabs at the beginning of the line got mixed up when the code was copied and pasted. Since Python relies heavily on exact spacing, even one extra space can cause this error.
 
+To fix this completely, please **delete all the text** in your `hourlyReportV3.py` file, and copy-paste the entire block below using the "Copy" button at the top right of the code box. This ensures no hidden spaces or tabs are accidentally added.
+
+Here is the clean, correctly indented code:
+
+```python
 import streamlit as st
 import pandas as pd
 import io
@@ -126,7 +124,6 @@ if process_btn:
                     for i, col in subject_cols:
                         code = str(col).split(' - ')[0].strip()
                         attended_series = pd.to_numeric(df_att.iloc[1:, i+1], errors='coerce').fillna(0)
-                        # Fix: Count students who attended > 0 hours, instead of summing all hours
                         att_counts[code] = int((attended_series > 0).sum())
                         
                     schedule = tt_dict.get((spec, sec), {})
